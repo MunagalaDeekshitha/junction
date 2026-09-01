@@ -1,0 +1,61 @@
+internship_id,company,title,domain,required_skills,location,stipend,duration_months,min_cgpa,openings
+I0001,GreenLeaf Logistics,Backend Developer Intern,Software Development,Communication;Graphic Design;Figma;Git;Cloud Computing (AWS);Python,Delhi NCR,20000,2,6.16,1
+I0002,Nimbus Cloud Services,R&D Intern,Mechanical Engineering,Marketing;Customer Service;Cloud Computing (AWS);Java,Mumbai,8000,6,6.55,2
+I0003,Falcon Cybersecurity,Mechanical Design Intern,Mechanical Engineering,Mobile App Development (Flutter);R;SEO;Cybersecurity;Project Management;Financial Modeling,Chennai,30000,2,7.7,5
+I0004,Lumen EdTech,Sales Intern,Sales,Accounting;R;SQL;Networking;Java;Node.js,Vijayawada,15000,2,7.43,2
+I0005,Vertex Consulting,Web Development Intern,Web Development,Java;PyTorch;Linux;Sales;Machine Learning;Customer Service,Bangalore,10000,2,7.28,4
+I0006,Aster Retail Corp,Business Analyst Intern,Business Analytics,Cloud Computing (AWS);JavaScript;Marketing;Public Speaking;Python;PyTorch,Hyderabad,0,3,6.86,1
+I0007,CoreStack Systems,Electrical Engineering Intern,Electrical Engineering,Project Management;React;UI/UX Design,Pune,30000,2,7.91,4
+I0008,BrightWave Analytics,Financial Analyst Intern,Finance,Tableau;Swift;Machine Learning;Financial Modeling;C++;Statistics,Pune,15000,3,7.32,2
+I0009,CoreStack Systems,Sales Intern,Sales,Cloud Computing (AWS);Video Editing;Financial Modeling,Vijayawada,10000,2,6.62,3
+I0010,Falcon Cybersecurity,Web Development Intern,Web Development,Java;React;SEO;Kotlin,Bangalore,5000,2,6.17,5
+I0011,Vertex Consulting,Backend Developer Intern,Software Development,Communication;React;Marketing,Chennai,15000,2,7.89,1
+I0012,GreenLeaf Logistics,Web Development Intern,Web Development,Networking;Docker;Mobile App Development (Flutter);Communication,Pune,20000,6,6.55,3
+I0013,NovaTech Solutions,Digital Marketing Intern,Digital Marketing,Swift;Content Writing;Cybersecurity;Sales,Delhi NCR,20000,6,6.95,5
+I0014,Quantum Finlabs,Financial Analyst Intern,Finance,HTML/CSS;Cloud Computing (AWS);Tableau;Flask;Financial Modeling;Project Management,Chennai,8000,6,6.36,4
+I0015,GreenLeaf Logistics,Operations Intern,Operations,SEO;Cybersecurity;Accounting;C++;Tableau;Communication,Chennai,8000,6,6.2,4
+I0016,GreenLeaf Logistics,Business Development Intern,Sales,Financial Modeling;TensorFlow;Node.js,Remote,20000,6,7.51,1
+I0017,Redwood HealthTech,UI/UX Design Intern,UI/UX Design,PyTorch;Git;Cloud Computing (AWS);Python;Swift;TensorFlow,Hyderabad,20000,3,8.29,5
+I0018,BlueOrbit AI,Content Writing Intern,Content & Media,Communication;Cybersecurity;Docker;UI/UX Design;Tableau;Video Editing,Delhi NCR,8000,3,6.9,4
+I0019,Aster Retail Corp,Mechanical Design Intern,Mechanical Engineering,Docker;PyTorch;R;Swift;SEO;React,Chennai,20000,2,6.04,5
+I0020,Aster Retail Corp,Supply Chain Intern,Operations,HTML/CSS;TensorFlow;Git;Excel;Tableau,Chennai,10000,6,7.64,3
+I0021,Vertex Consulting,SEO Intern,Digital Marketing,Video Editing;Django;Statistics;Kotlin;C++;Financial Modeling,Pune,15000,6,8.39,5
+I0022,Lumen EdTech,Software Engineering Intern,Software Development,Python;SEO;C++,Chennai,0,6,6.38,2
+I0023,NovaTech Solutions,Embedded Systems Intern,Electrical Engineering,Node.js;Kotlin;Swift;Project Management;Sales,Bangalore,15000,6,7.03,1
+I0024,Orion Manufacturing,Embedded Systems Intern,Electrical Engineering,JavaScript;Customer Service;Content Writing;Flask;Data Analysis,Hyderabad,15000,2,6.6,5
+I0025,Aster Retail Corp,Embedded Systems Intern,Electrical Engineering,Figma;Marketing;Machine Learning;R;Video Editing,Chennai,20000,2,6.75,1
+I0026,Vertex Consulting,Product Management Intern,Product Management,Marketing;Tableau;Cybersecurity,Bangalore,20000,2,7.76,1
+I0027,Quantum Finlabs,R&D Intern,Mechanical Engineering,Networking;Data Analysis;Accounting;React;Excel,Kolkata,10000,3,6.12,1
+I0028,Quantum Finlabs,APM Intern,Product Management,Flask;Docker;JavaScript,Kolkata,5000,6,8.05,1
+I0029,CoreStack Systems,Digital Marketing Intern,Digital Marketing,Networking;Tableau;Financial Modeling;Git,Pune,30000,6,7.81,5
+I0030,Lumen EdTech,Video Editing Intern,Content & Media,Data Analysis;Content Writing;Excel,Hyderabad,8000,6,7.92,5
+I0031,Vertex Consulting,Talent Acquisition Intern,Human Resources,Swift;Figma;Graphic Design,Chennai,8000,6,8.35,4
+I0032,Redwood HealthTech,Web Development Intern,Web Development,Kotlin;UI/UX Design;Communication,Hyderabad,0,3,6.39,2
+I0033,Vertex Consulting,Video Editing Intern,Content & Media,R;Data Analysis;Machine Learning;Python;Cloud Computing (AWS),Delhi NCR,30000,3,6.26,1
+I0034,BrightWave Analytics,Web Development Intern,Web Development,Cybersecurity;Swift;Customer Service;SEO;Data Analysis;JavaScript,Delhi NCR,15000,2,7.49,3
+I0035,Falcon Cybersecurity,Business Development Intern,Sales,UI/UX Design;SEO;Tableau,Hyderabad,20000,6,8.26,2
+I0036,PixelForge Studios,Business Analyst Intern,Business Analytics,Django;C++;Figma;Cloud Computing (AWS);Mobile App Development (Flutter);Sales,Hyderabad,5000,3,6.69,3
+I0037,Aster Retail Corp,Mechanical Design Intern,Mechanical Engineering,Public Speaking;Communication;Swift;Sales;Mobile App Development (Flutter),Chennai,10000,2,6.34,1
+I0038,Skyline Media Group,Talent Acquisition Intern,Human Resources,Git;Graphic Design;Swift;Content Writing;C++;Cloud Computing (AWS),Kolkata,20000,2,7.2,2
+I0039,CoreStack Systems,Talent Acquisition Intern,Human Resources,Swift;Sales;Networking;Communication;Docker,Mumbai,30000,3,6.91,5
+I0040,Falcon Cybersecurity,UI/UX Design Intern,UI/UX Design,Video Editing;PyTorch;Graphic Design,Mumbai,30000,6,6.17,4
+I0041,Nimbus Cloud Services,APM Intern,Product Management,Swift;Cloud Computing (AWS);Communication;Public Speaking,Pune,20000,3,7.97,1
+I0042,Redwood HealthTech,R&D Intern,Mechanical Engineering,Financial Modeling;Customer Service;SEO;Swift;React;R,Vijayawada,15000,6,8.29,1
+I0043,Falcon Cybersecurity,Cybersecurity Intern,Cybersecurity,Django;Kotlin;React;Networking;Marketing,Delhi NCR,30000,3,6.26,1
+I0044,Falcon Cybersecurity,Digital Marketing Intern,Digital Marketing,Graphic Design;R;Marketing;Video Editing,Kolkata,20000,6,6.38,1
+I0045,GreenLeaf Logistics,Mechanical Design Intern,Mechanical Engineering,SEO;Machine Learning;Java;HTML/CSS;Statistics,Delhi NCR,10000,2,7.3,3
+I0046,NovaTech Solutions,Mechanical Design Intern,Mechanical Engineering,Graphic Design;Docker;SQL;Cloud Computing (AWS);React;Java,Delhi NCR,20000,2,7.69,2
+I0047,Vertex Consulting,Operations Intern,Operations,Cybersecurity;Django;Git;Content Writing,Chennai,30000,3,7.57,2
+I0048,NovaTech Solutions,APM Intern,Product Management,JavaScript;Kotlin;TensorFlow;Graphic Design;Content Writing;Tableau,Chennai,5000,3,7.88,1
+I0049,BrightWave Analytics,Business Analyst Intern,Business Analytics,R;Docker;TensorFlow;Video Editing,Mumbai,20000,3,7.32,3
+I0050,Lumen EdTech,Operations Analyst Intern,Business Analytics,Linux;Java;Statistics;Mobile App Development (Flutter);Video Editing;Flask,Mumbai,15000,6,6.21,2
+I0051,Redwood HealthTech,Finance Intern,Finance,Cloud Computing (AWS);Java;Flask;R,Pune,15000,3,7.05,2
+I0052,Vertex Consulting,Operations Analyst Intern,Business Analytics,Flask;Sales;Financial Modeling;Swift;Cybersecurity;Django,Mumbai,5000,2,6.79,4
+I0053,BlueOrbit AI,Business Analyst Intern,Business Analytics,Python;Sales;C++;TensorFlow;Tableau,Vijayawada,20000,3,7.02,4
+I0054,NovaTech Solutions,Talent Acquisition Intern,Human Resources,Django;Machine Learning;Networking;JavaScript;Excel;UI/UX Design,Mumbai,5000,6,6.72,4
+I0055,Falcon Cybersecurity,Operations Analyst Intern,Business Analytics,Networking;Java;Figma,Vijayawada,30000,3,7.36,1
+I0056,Lumen EdTech,SOC Analyst Intern,Cybersecurity,Content Writing;Data Analysis;Communication;Cloud Computing (AWS),Bangalore,10000,3,6.87,1
+I0057,Nimbus Cloud Services,Mechanical Design Intern,Mechanical Engineering,PyTorch;Linux;Statistics;Kotlin,Remote,5000,6,6.35,2
+I0058,GreenLeaf Logistics,Sales Intern,Sales,Networking;Statistics;Financial Modeling,Kolkata,15000,2,6.81,3
+I0059,GreenLeaf Logistics,Social Media Intern,Digital Marketing,Customer Service;Data Analysis;C++;SEO;Node.js,Pune,20000,2,6.62,3
+I0060,Vertex Consulting,Sales Intern,Sales,Sales;HTML/CSS;Networking;Figma;SEO;Tableau,Hyderabad,20000,2,7.01,3

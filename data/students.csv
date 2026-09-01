@@ -1,0 +1,151 @@
+student_id,name,college,degree,year,cgpa,skills,interest_domain,preferred_location,preferred_stipend_min,past_experience_months
+S0001,Ananya Sharma,NIT Warangal,MCA,3,6.12,Communication;Excel;C++;Data Analysis;Financial Modeling,Content & Media,Hyderabad,5000,0
+S0002,Manoj Das,VIT Vellore,M.Tech Data Science,3,7.06,TensorFlow;Financial Modeling;SEO;Excel;Graphic Design;Figma;Python,Software Development,Chennai,10000,0
+S0003,Rohan Rao,Osmania University,B.Tech ECE,3,6.3,Statistics;Mobile App Development (Flutter);Public Speaking;React;Video Editing,Data Science,Mumbai,20000,12
+S0004,Neha Das,NIT Warangal,BBA,2,7.44,React;Excel;UI/UX Design,UI/UX Design,Guntur,10000,0
+S0005,Neha Gupta,BITS Pilani,B.Tech Mechanical,3,7.44,SQL;Mobile App Development (Flutter);Swift;Django;Financial Modeling,UI/UX Design,Vijayawada,5000,6
+S0006,Rahul Pillai,SRM University,B.Com,2,6.8,Excel;React;Docker,Cybersecurity,Kolkata,10000,0
+S0007,Pooja Rao,Anna University,MCA,3,9.41,HTML/CSS;Public Speaking;C++;Communication;Cybersecurity;Financial Modeling,Operations,Remote,10000,0
+S0008,Vikram Patel,VIT Vellore,M.Tech Data Science,4,6.24,Node.js;Java;HTML/CSS,Mechanical Engineering,Remote,20000,2
+S0009,Manoj Nair,Delhi University,B.Tech ECE,3,7.65,Java;Financial Modeling;Figma,Electrical Engineering,Guntur,0,6
+S0010,Arjun Patel,Osmania University,MCA,2,6.58,Customer Service;Data Analysis;Swift;Cloud Computing (AWS),Cybersecurity,Pune,20000,12
+S0011,Manoj Sharma,BITS Pilani,B.Tech CSE,2,9.34,Sales;JavaScript;Java;R;Cloud Computing (AWS),Business Analytics,Hyderabad,0,6
+S0012,Pooja Pillai,JNTU Kakinada,M.Tech Data Science,2,9.53,C++;Swift;Project Management;Cybersecurity;Django;Public Speaking;Accounting,Data Science,Chennai,10000,2
+S0013,Neha Menon,JNTU Kakinada,BCA,2,8.24,Graphic Design;Java;Communication;Excel;SQL;Git;JavaScript,Operations,Bangalore,0,6
+S0014,Priya Verma,BITS Pilani,B.Com,4,7.84,Git;SQL;Customer Service,Data Science,Vijayawada,5000,6
+S0015,Sandeep Das,NIT Warangal,M.Tech Data Science,3,7.61,Project Management;SEO;TensorFlow;Data Analysis,Mechanical Engineering,Guntur,0,6
+S0016,Ananya Sharma,VIT Vellore,M.Tech Data Science,2,7.06,Data Analysis;Communication;TensorFlow;Financial Modeling;Graphic Design,Human Resources,Chennai,0,2
+S0017,Isha Reddy,BITS Pilani,M.Tech Data Science,2,6.63,Python;Machine Learning;Communication;Django;SEO;Sales;Project Management,Software Development,Bangalore,15000,0
+S0018,Aditya Nair,IIT Delhi,MBA,2,6.19,Sales;HTML/CSS;TensorFlow;UI/UX Design;PyTorch;Node.js;Financial Modeling,Human Resources,Guntur,20000,12
+S0019,Manoj Iyer,JNTU Kakinada,BBA,4,8.26,Machine Learning;Flask;SQL;Mobile App Development (Flutter);Communication;Marketing;Java,Software Development,Kolkata,0,2
+S0020,Sandeep Das,VIT Vellore,B.Com,3,7.2,Public Speaking;PyTorch;Docker;Communication;Marketing,Electrical Engineering,Hyderabad,0,2
+S0021,Lakshmi Das,Anna University,B.Tech Mechanical,3,9.35,Financial Modeling;PyTorch;Customer Service,Data Science,Chennai,10000,0
+S0022,Sneha Menon,VIT Vellore,B.Com,2,9.38,Cloud Computing (AWS);Kotlin;Accounting;Python;Cybersecurity;Swift;Data Analysis,Sales,Vijayawada,5000,0
+S0023,Meera Das,Anna University,B.Tech CSE,2,8.41,PyTorch;Swift;Public Speaking;Customer Service;Sales,UI/UX Design,Mumbai,0,0
+S0024,Rahul Naidu,NIT Warangal,B.Tech ECE,4,9.43,Django;Graphic Design;Cybersecurity;Content Writing;Python,Web Development,Vijayawada,0,12
+S0025,Neha Das,Delhi University,B.Tech CSE,3,6.8,Content Writing;C++;React;Cloud Computing (AWS),Electrical Engineering,Chennai,0,0
+S0026,Isha Pillai,Delhi University,M.Tech Data Science,4,9.28,HTML/CSS;Communication;Django;Flask;SEO;JavaScript;Linux,Human Resources,Chennai,10000,0
+S0027,Ananya Rao,Amrita University,MBA,3,9.12,Project Management;Excel;TensorFlow,Sales,Chennai,5000,0
+S0028,Karthik Rao,Osmania University,MBA,2,6.44,SQL;Figma;Statistics;Customer Service;Marketing,Finance,Mumbai,5000,3
+S0029,Arjun Sharma,JNTU Kakinada,BBA,3,6.17,Content Writing;Statistics;Docker;Swift;Customer Service;Java;Tableau,Data Science,Remote,0,3
+S0030,Isha Kumar,JNTU Kakinada,MBA,4,9.22,R;Content Writing;SQL;Git,Content & Media,Mumbai,20000,0
+S0031,Kavya Gupta,VIT Vellore,MCA,4,7.14,Cybersecurity;C++;TensorFlow;SEO;Tableau,Human Resources,Vijayawada,0,0
+S0032,Meera Verma,Amrita University,B.Tech Mechanical,4,6.32,Mobile App Development (Flutter);Docker;Video Editing;Graphic Design;Linux;PyTorch;Customer Service,Human Resources,Vijayawada,20000,0
+S0033,Rohan Pillai,IIT Delhi,B.Tech CSE,2,9.74,Cloud Computing (AWS);Excel;TensorFlow;HTML/CSS,Cybersecurity,Kolkata,0,2
+S0034,Kavya Kumar,VIT Vellore,B.Tech CSE,2,8.96,Tableau;Sales;Marketing;Communication,Business Analytics,Chennai,5000,12
+S0035,Manoj Menon,Amrita University,MCA,4,9.39,Communication;Java;Video Editing;C++;Mobile App Development (Flutter);Accounting;Docker,Software Development,Remote,20000,2
+S0036,Sneha Singh,BITS Pilani,B.Com,3,6.29,Graphic Design;Public Speaking;Communication;Figma;Accounting;Sales,Sales,Mumbai,5000,0
+S0037,Rahul Gupta,NIT Warangal,M.Tech Data Science,3,7.26,Machine Learning;C++;HTML/CSS;Excel;Tableau;Mobile App Development (Flutter);PyTorch,Operations,Guntur,15000,0
+S0038,Karthik Pillai,Delhi University,B.Com,3,9.24,Linux;JavaScript;Networking;Tableau;Project Management;Python,Human Resources,Remote,20000,6
+S0039,Isha Naidu,Amrita University,B.Tech CSE,3,7.28,Sales;Excel;Figma;Content Writing,Business Analytics,Remote,5000,12
+S0040,Aditya Iyer,VIT Vellore,B.Sc Statistics,2,6.19,JavaScript;Marketing;Linux;Networking;Swift;Machine Learning;Content Writing,Business Analytics,Remote,10000,0
+S0041,Aditya Gupta,Osmania University,B.Tech CSE,3,6.85,Figma;SEO;Public Speaking;Machine Learning;Project Management;JavaScript,Finance,Hyderabad,0,12
+S0042,Aarav Verma,VIT Vellore,B.Sc Statistics,4,6.43,Kotlin;HTML/CSS;Communication,UI/UX Design,Chennai,15000,6
+S0043,Arjun Naidu,NIT Warangal,MCA,2,9.53,Mobile App Development (Flutter);Java;Django;Cloud Computing (AWS),Finance,Kolkata,15000,2
+S0044,Karthik Reddy,JNTU Kakinada,B.Tech CSE,3,8.02,Data Analysis;Cloud Computing (AWS);Mobile App Development (Flutter);Java,Business Analytics,Delhi NCR,0,3
+S0045,Rahul Sharma,SRM University,B.Tech Mechanical,4,7.98,Sales;Data Analysis;Content Writing;R;Video Editing;HTML/CSS,Sales,Mumbai,20000,12
+S0046,Isha Naidu,Anna University,B.Sc Statistics,2,8.85,Content Writing;Linux;Figma;Docker;Communication;Machine Learning,Mechanical Engineering,Kolkata,20000,6
+S0047,Suresh Gupta,Delhi University,B.Com,4,8.66,Docker;Flask;Sales;PyTorch;Statistics;Public Speaking,Software Development,Mumbai,20000,0
+S0048,Manoj Verma,Amrita University,B.Sc Statistics,3,9.01,SEO;Sales;Cybersecurity;Communication,Data Science,Hyderabad,10000,0
+S0049,Suresh Singh,Delhi University,M.Tech Data Science,4,8.09,Linux;R;Project Management;Cybersecurity;Accounting,UI/UX Design,Delhi NCR,15000,0
+S0050,Meera Nair,Osmania University,B.Tech Mechanical,2,6.82,TensorFlow;Docker;Java,UI/UX Design,Guntur,10000,6
+S0051,Sandeep Naidu,Anna University,B.Tech CSE,4,8.03,UI/UX Design;Data Analysis;TensorFlow;Swift;Excel;R;Flask,Electrical Engineering,Mumbai,0,0
+S0052,Isha Nair,JNTU Kakinada,B.Com,3,7.82,Swift;Sales;Data Analysis;Python,Content & Media,Delhi NCR,5000,0
+S0053,Arjun Pillai,NIT Warangal,MCA,4,8.61,SQL;Marketing;Sales,Mechanical Engineering,Pune,5000,12
+S0054,Sandeep Nair,JNTU Kakinada,MCA,2,8.95,Java;Cybersecurity;SEO;Mobile App Development (Flutter),Data Science,Remote,15000,2
+S0055,Meera Pillai,Anna University,B.Tech ECE,2,6.91,Cloud Computing (AWS);Networking;Node.js;Data Analysis;PyTorch;Kotlin,Business Analytics,Vijayawada,0,0
+S0056,Aarav Rao,NIT Warangal,BBA,3,8.99,Project Management;UI/UX Design;React;Excel;Kotlin;Networking;Video Editing,Mechanical Engineering,Kolkata,5000,2
+S0057,Ananya Patel,VIT Vellore,B.Com,4,8.85,Figma;HTML/CSS;SQL;Node.js,UI/UX Design,Kolkata,10000,2
+S0058,Ananya Menon,Amrita University,B.Tech ECE,4,6.15,Marketing;Figma;Customer Service;Financial Modeling;Sales,Content & Media,Remote,10000,3
+S0059,Arjun Sharma,JNTU Kakinada,B.Tech CSE,2,7.79,Networking;Linux;JavaScript;Figma,Data Science,Guntur,10000,0
+S0060,Sandeep Rao,NIT Warangal,B.Tech Mechanical,3,7.56,Machine Learning;Project Management;Statistics;SEO;Git;Docker,Product Management,Guntur,10000,6
+S0061,Suresh Pillai,SRM University,BCA,2,8.5,React;Video Editing;Machine Learning;Docker;Public Speaking;Linux;Java,Cybersecurity,Vijayawada,15000,2
+S0062,Priya Verma,BITS Pilani,B.Com,4,6.5,Kotlin;Sales;Swift;Graphic Design;Node.js,Electrical Engineering,Mumbai,15000,6
+S0063,Pooja Reddy,NIT Warangal,BBA,2,7.75,Communication;Django;Cloud Computing (AWS);Cybersecurity;Python;Linux;SEO,Software Development,Hyderabad,5000,2
+S0064,Meera Patel,VIT Vellore,M.Tech Data Science,2,9.5,SEO;Project Management;Communication;Video Editing;Cybersecurity,Content & Media,Vijayawada,5000,12
+S0065,Rohan Nair,JNTU Kakinada,MCA,4,7.86,Git;Customer Service;Figma;Python;UI/UX Design;Cloud Computing (AWS),Cybersecurity,Pune,15000,3
+S0066,Pooja Gupta,BITS Pilani,M.Tech Data Science,2,7.21,Financial Modeling;Tableau;Video Editing;Docker;TensorFlow;Communication;Kotlin,Finance,Guntur,15000,2
+S0067,Vikram Menon,Amrita University,B.Tech ECE,4,9.46,Customer Service;Linux;Git;Data Analysis,Software Development,Bangalore,5000,2
+S0068,Vikram Reddy,SRM University,MBA,4,8.73,Git;Kotlin;Marketing;Machine Learning;Financial Modeling,Mechanical Engineering,Guntur,20000,0
+S0069,Lakshmi Reddy,NIT Warangal,B.Sc Statistics,2,8.64,Excel;Machine Learning;Content Writing;Data Analysis;Swift,UI/UX Design,Bangalore,0,0
+S0070,Priya Nair,JNTU Kakinada,B.Tech Mechanical,2,6.67,Content Writing;HTML/CSS;Communication;Accounting;SEO,Finance,Kolkata,15000,3
+S0071,Divya Menon,Amrita University,B.Com,4,8.08,HTML/CSS;Excel;Video Editing;Public Speaking;Mobile App Development (Flutter);Linux;Python,Operations,Hyderabad,15000,0
+S0072,Sandeep Nair,NIT Warangal,BBA,3,8.17,Public Speaking;Video Editing;Cloud Computing (AWS);TensorFlow;Tableau;Project Management,Product Management,Kolkata,10000,6
+S0073,Meera Sharma,BITS Pilani,MCA,3,6.83,Figma;Python;Networking;Node.js;Sales;UI/UX Design,Sales,Chennai,20000,0
+S0074,Vikram Kumar,JNTU Kakinada,MBA,4,6.5,Cloud Computing (AWS);Graphic Design;React,Data Science,Mumbai,10000,6
+S0075,Kavya Iyer,Anna University,B.Tech Mechanical,3,9.47,Financial Modeling;R;Accounting;Customer Service,UI/UX Design,Guntur,10000,6
+S0076,Rahul Naidu,NIT Warangal,M.Tech Data Science,2,7.0,SQL;HTML/CSS;Excel;Marketing;Cybersecurity;R,Data Science,Hyderabad,15000,0
+S0077,Arjun Das,Osmania University,MBA,4,6.84,Data Analysis;Excel;Project Management;JavaScript;Kotlin,Human Resources,Hyderabad,15000,6
+S0078,Meera Kumar,Amrita University,B.Tech ECE,2,6.89,C++;React;Cloud Computing (AWS),Human Resources,Vijayawada,5000,2
+S0079,Aditya Gupta,Anna University,B.Tech CSE,4,7.41,SEO;Linux;HTML/CSS;Swift;Data Analysis;Sales;Kotlin,Product Management,Guntur,15000,0
+S0080,Neha Reddy,BITS Pilani,B.Tech ECE,3,6.35,Financial Modeling;Statistics;Node.js;Marketing;Figma,Product Management,Chennai,20000,0
+S0081,Priya Naidu,Osmania University,BBA,4,6.82,C++;Networking;PyTorch;SQL,Finance,Chennai,10000,12
+S0082,Vikram Naidu,NIT Warangal,B.Tech CSE,2,6.06,Python;Figma;HTML/CSS;C++;Financial Modeling;Public Speaking;Flask,Operations,Chennai,20000,0
+S0083,Aarav Iyer,NIT Warangal,B.Tech ECE,3,7.7,C++;SEO;Accounting,Digital Marketing,Delhi NCR,20000,3
+S0084,Ananya Menon,Amrita University,B.Tech CSE,2,9.79,Kotlin;React;Accounting;Cloud Computing (AWS),Electrical Engineering,Remote,15000,6
+S0085,Ananya Menon,Anna University,MCA,4,8.22,SQL;Machine Learning;Docker;HTML/CSS;Swift;C++,Content & Media,Delhi NCR,15000,3
+S0086,Manoj Nair,Amrita University,BBA,3,7.29,Mobile App Development (Flutter);Content Writing;Data Analysis;Java;Cybersecurity;PyTorch;Kotlin,Mechanical Engineering,Guntur,15000,2
+S0087,Ananya Gupta,NIT Warangal,B.Tech ECE,2,7.64,Public Speaking;R;HTML/CSS;Project Management;SQL,Human Resources,Delhi NCR,5000,3
+S0088,Priya Das,JNTU Kakinada,B.Com,3,6.39,Git;Java;SEO;Statistics;Content Writing;Node.js;UI/UX Design,Electrical Engineering,Vijayawada,5000,0
+S0089,Pooja Verma,NIT Warangal,B.Com,4,6.86,Statistics;Cybersecurity;R,Sales,Remote,20000,12
+S0090,Lakshmi Das,Delhi University,MBA,2,6.69,JavaScript;Mobile App Development (Flutter);Figma;Swift;Flask;Kotlin;Cloud Computing (AWS),Product Management,Pune,20000,6
+S0091,Suresh Reddy,SRM University,M.Tech Data Science,3,7.3,Machine Learning;Accounting;PyTorch,Web Development,Delhi NCR,10000,6
+S0092,Rahul Naidu,Amrita University,M.Tech Data Science,3,8.31,Machine Learning;Node.js;HTML/CSS;Django;Kotlin;Swift;Figma,Business Analytics,Remote,10000,0
+S0093,Manoj Reddy,IIT Delhi,BBA,3,9.74,Java;UI/UX Design;Linux;Sales;Accounting;Cloud Computing (AWS),Finance,Bangalore,0,0
+S0094,Meera Verma,IIT Delhi,B.Sc Statistics,4,7.64,Public Speaking;UI/UX Design;Docker;Java,Cybersecurity,Pune,15000,3
+S0095,Divya Patel,Amrita University,B.Tech ECE,3,8.19,SQL;Marketing;React;Content Writing;JavaScript,Electrical Engineering,Kolkata,15000,6
+S0096,Kavya Nair,SRM University,B.Tech ECE,2,7.66,JavaScript;Docker;Django;Video Editing;R;Machine Learning,Data Science,Remote,20000,0
+S0097,Suresh Pillai,NIT Warangal,BCA,4,6.74,Excel;Git;Django;SQL;Customer Service,Digital Marketing,Delhi NCR,10000,6
+S0098,Vikram Verma,VIT Vellore,B.Tech ECE,2,9.61,Public Speaking;TensorFlow;Flask;Mobile App Development (Flutter),Data Science,Guntur,15000,12
+S0099,Sandeep Naidu,NIT Warangal,B.Sc Statistics,3,8.4,Networking;Kotlin;Docker;Mobile App Development (Flutter);HTML/CSS;Graphic Design,Business Analytics,Mumbai,20000,0
+S0100,Neha Patel,Anna University,B.Tech ECE,4,9.28,Video Editing;Graphic Design;React;Node.js;R,Data Science,Hyderabad,20000,3
+S0101,Manoj Rao,Osmania University,B.Tech Mechanical,2,7.71,Cybersecurity;React;Graphic Design;Networking;TensorFlow;Docker;Project Management,Mechanical Engineering,Delhi NCR,0,3
+S0102,Sneha Sharma,Anna University,M.Tech Data Science,3,8.94,Graphic Design;Accounting;Kotlin;Django;R;Networking,UI/UX Design,Kolkata,0,12
+S0103,Rahul Reddy,Anna University,MCA,2,7.27,Cybersecurity;Tableau;UI/UX Design,Finance,Kolkata,5000,0
+S0104,Meera Kumar,Delhi University,B.Tech Mechanical,4,8.67,C++;Mobile App Development (Flutter);Machine Learning;Cloud Computing (AWS);Cybersecurity;Tableau,Content & Media,Vijayawada,0,6
+S0105,Kavya Patel,BITS Pilani,MBA,3,6.73,R;Cloud Computing (AWS);Flask,Finance,Pune,5000,0
+S0106,Meera Pillai,IIT Delhi,MBA,4,6.5,Customer Service;Financial Modeling;Accounting,Cybersecurity,Remote,5000,0
+S0107,Sneha Pillai,JNTU Kakinada,B.Com,4,8.98,Django;Graphic Design;React;SEO;R;Communication;Kotlin,Content & Media,Chennai,20000,0
+S0108,Meera Naidu,SRM University,BCA,4,7.59,TensorFlow;R;Networking;Graphic Design;Video Editing;UI/UX Design,Cybersecurity,Pune,5000,12
+S0109,Lakshmi Iyer,Osmania University,B.Tech ECE,3,6.32,Node.js;Project Management;R;Cybersecurity;Data Analysis,Sales,Pune,10000,2
+S0110,Manoj Iyer,IIT Delhi,M.Tech Data Science,4,7.42,Machine Learning;Excel;Graphic Design;Statistics;JavaScript;SEO,Sales,Remote,0,0
+S0111,Divya Sharma,IIT Delhi,B.Com,3,8.65,Git;HTML/CSS;C++,Finance,Pune,15000,2
+S0112,Lakshmi Sharma,VIT Vellore,BCA,4,8.31,JavaScript;Public Speaking;PyTorch,Operations,Remote,0,12
+S0113,Meera Verma,JNTU Kakinada,B.Sc Statistics,2,6.42,Node.js;Communication;SEO,Digital Marketing,Guntur,20000,3
+S0114,Aarav Kumar,JNTU Kakinada,M.Tech Data Science,2,8.52,Communication;HTML/CSS;UI/UX Design;Content Writing;Python;Statistics;Swift,Electrical Engineering,Hyderabad,20000,0
+S0115,Rohan Patel,Delhi University,B.Com,4,6.06,Customer Service;Cybersecurity;JavaScript;Tableau;Project Management;React;Linux,Electrical Engineering,Hyderabad,10000,0
+S0116,Ananya Naidu,VIT Vellore,B.Sc Statistics,4,7.82,C++;React;Statistics;Financial Modeling;Git,Business Analytics,Pune,5000,0
+S0117,Aditya Sharma,Osmania University,M.Tech Data Science,4,7.8,React;TensorFlow;Docker;Cloud Computing (AWS),Digital Marketing,Bangalore,5000,0
+S0118,Neha Pillai,Delhi University,M.Tech Data Science,3,8.82,Git;Figma;Java,Cybersecurity,Remote,10000,0
+S0119,Pooja Singh,VIT Vellore,BCA,3,7.22,Accounting;Figma;Machine Learning;Content Writing;Mobile App Development (Flutter),Mechanical Engineering,Hyderabad,10000,6
+S0120,Meera Nair,JNTU Kakinada,M.Tech Data Science,3,8.43,Content Writing;Django;Graphic Design;Statistics;Mobile App Development (Flutter);React;Linux,Mechanical Engineering,Bangalore,0,6
+S0121,Suresh Gupta,IIT Delhi,B.Tech Mechanical,2,6.9,JavaScript;HTML/CSS;Mobile App Development (Flutter);Graphic Design,Electrical Engineering,Delhi NCR,10000,2
+S0122,Sandeep Sharma,VIT Vellore,BCA,3,7.51,Graphic Design;R;SQL;Networking,Business Analytics,Mumbai,5000,0
+S0123,Aarav Singh,Amrita University,BBA,4,7.09,Accounting;Tableau;Cybersecurity;Java;Public Speaking;Networking,Web Development,Guntur,5000,0
+S0124,Vikram Pillai,Osmania University,BCA,3,9.39,Flask;Graphic Design;Machine Learning;Docker;Statistics;SQL,Data Science,Pune,5000,12
+S0125,Neha Patel,Amrita University,B.Tech CSE,3,8.11,TensorFlow;C++;Communication,UI/UX Design,Delhi NCR,15000,12
+S0126,Isha Iyer,Amrita University,BCA,3,8.92,SQL;Cloud Computing (AWS);Marketing,Business Analytics,Kolkata,0,0
+S0127,Rahul Kumar,VIT Vellore,M.Tech Data Science,4,9.46,Video Editing;Accounting;Statistics;C++;Cybersecurity;Flask,Data Science,Bangalore,0,3
+S0128,Vikram Nair,Anna University,B.Tech ECE,3,6.75,Docker;Excel;Statistics;Accounting,Web Development,Vijayawada,10000,0
+S0129,Meera Das,JNTU Kakinada,B.Tech Mechanical,2,8.5,Customer Service;Django;Linux,Electrical Engineering,Kolkata,10000,12
+S0130,Sandeep Sharma,Anna University,BBA,4,7.58,Machine Learning;React;Networking,Sales,Bangalore,15000,6
+S0131,Isha Nair,NIT Warangal,B.Tech CSE,2,7.67,Project Management;Communication;Marketing;Cloud Computing (AWS);Video Editing,Product Management,Guntur,15000,0
+S0132,Rahul Das,Osmania University,BCA,2,7.21,Docker;Statistics;Marketing;C++;R,Web Development,Guntur,0,0
+S0133,Aditya Verma,JNTU Kakinada,M.Tech Data Science,2,9.66,Node.js;UI/UX Design;Tableau,Web Development,Pune,10000,3
+S0134,Rahul Verma,Amrita University,B.Tech CSE,2,9.59,Sales;Customer Service;Video Editing;Cloud Computing (AWS),Cybersecurity,Vijayawada,15000,0
+S0135,Karthik Das,JNTU Kakinada,B.Sc Statistics,3,8.04,Node.js;UI/UX Design;Sales,Finance,Hyderabad,15000,0
+S0136,Arjun Singh,BITS Pilani,MBA,4,7.1,R;React;Marketing;Node.js;Networking;Cybersecurity,Finance,Remote,20000,2
+S0137,Isha Nair,Osmania University,MBA,2,6.76,Kotlin;Java;C++;Data Analysis;Marketing;R;Git,Sales,Vijayawada,15000,3
+S0138,Priya Sharma,VIT Vellore,MCA,4,6.53,Git;Project Management;Accounting;Video Editing,Software Development,Kolkata,10000,0
+S0139,Suresh Das,JNTU Kakinada,B.Com,3,9.1,Linux;Git;Customer Service;Financial Modeling;Sales,Content & Media,Delhi NCR,10000,6
+S0140,Ananya Rao,JNTU Kakinada,MCA,2,8.74,Swift;JavaScript;Mobile App Development (Flutter);Project Management;Public Speaking,Business Analytics,Kolkata,15000,0
+S0141,Manoj Kumar,IIT Delhi,B.Sc Statistics,3,7.59,Tableau;HTML/CSS;Communication;React;Networking;Java;TensorFlow,Content & Media,Remote,5000,2
+S0142,Manoj Naidu,Amrita University,BCA,3,7.19,Node.js;C++;Accounting;PyTorch;Cybersecurity;Docker,Business Analytics,Pune,15000,3
+S0143,Rahul Patel,Osmania University,B.Com,2,9.58,Kotlin;Project Management;TensorFlow;Communication;Figma,Finance,Mumbai,10000,6
+S0144,Karthik Singh,NIT Warangal,MCA,4,8.06,Docker;Project Management;Statistics;Cybersecurity;Figma;UI/UX Design,Content & Media,Remote,10000,12
+S0145,Vikram Nair,BITS Pilani,BBA,4,7.03,Machine Learning;Statistics;Graphic Design;Public Speaking;Project Management,Software Development,Vijayawada,10000,0
+S0146,Ananya Das,NIT Warangal,M.Tech Data Science,3,8.73,Communication;Swift;Node.js;Accounting;Excel;Networking;Mobile App Development (Flutter),Content & Media,Hyderabad,5000,0
+S0147,Isha Iyer,NIT Warangal,MCA,2,8.03,Project Management;TensorFlow;UI/UX Design;Docker;Mobile App Development (Flutter);Node.js,Human Resources,Bangalore,5000,2
+S0148,Sneha Sharma,JNTU Kakinada,MCA,2,9.53,Sales;Flask;UI/UX Design;React;Python;Cloud Computing (AWS),Sales,Delhi NCR,10000,2
+S0149,Isha Patel,NIT Warangal,MBA,2,8.78,Customer Service;Video Editing;Figma;TensorFlow,Mechanical Engineering,Mumbai,5000,0
+S0150,Rahul Naidu,SRM University,B.Tech ECE,2,9.73,TensorFlow;Flask;Marketing;Content Writing;Customer Service;Docker;Machine Learning,Digital Marketing,Guntur,10000,0
