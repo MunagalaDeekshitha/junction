@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 
 /* Connects to the Flask backend. Change API_BASE to your deployed backend
    URL once you host it online (see DEPLOY.md). */
-const API_BASE = "http://127.0.0.1:5001/api";
+   const API_BASE = "https://ai-internship-recommendation-system-mh2p.onrender.com/api";
 
 const FONT_IMPORT_STYLE = `
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
