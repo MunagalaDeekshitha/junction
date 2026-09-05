@@ -55,6 +55,23 @@ CREATE TABLE IF NOT EXISTS interactions (
     event_type TEXT NOT NULL,   -- view / apply / shortlist / hire
     created_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS accounts (
+    account_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL,              -- 'student' or 'company'
+    student_id TEXT,                 -- set when role = 'student'
+    company_name TEXT,               -- set when role = 'company'
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS sessions (
+    token TEXT PRIMARY KEY,
+    account_id INTEGER NOT NULL,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (account_id) REFERENCES accounts(account_id)
+);
 """
 
 
