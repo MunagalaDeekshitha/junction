@@ -22,8 +22,10 @@ Run with:  python3 app.py   (serves on http://localhost:5001)
 import os
 import sys
 import tempfile
+import secrets
 
 from flask import Flask, request, jsonify
+from werkzeug.security import generate_password_hash, check_password_hash
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "model"))
 
@@ -85,6 +87,133 @@ def get_recommender():
 
 def row_to_dict(row):
     return {k: row[k] for k in row.keys()}
+
+
+# ---------------- Auth helpers ----------------
+def get_account_from_token(token):
+    if not token:
+        return None
+    conn = db.get_connection()
+    row = conn.execute(
+        """SELECT accounts.* FROM sessions
+           JOIN accounts ON sessions.account_id = accounts.account_id
+           WHERE sessions.token = ?""",
+        (token,),
+    ).fetchone()
+    conn.close()
+    return row
+
+
+def create_session(account_id):
+    token = secrets.token_hex(24)
+    conn = db.get_connection()
+    conn.execute("INSERT INTO sessions (token, account_id) VALUES (?, ?)", (token, account_id))
+    conn.commit()
+    conn.close()
+    return token
+
+
+# ---------------- Auth endpoints ----------------
+@app.post("/api/auth/signup/student")
+def signup_student():
+    data = request.get_json()
+    required = ["email", "password", "name", "skills", "interest_domain"]
+    missing = [f for f in required if f not in data or not data[f]]
+    if missing:
+        return jsonify({"error": f"missing fields: {missing}"}), 400
+
+    conn = db.get_connection()
+    existing = conn.execute("SELECT 1 FROM accounts WHERE email = ?", (data["email"],)).fetchone()
+    if existing:
+        conn.close()
+        return jsonify({"error": "an account with this email already exists"}), 409
+
+    student_id = "S" + secrets.token_hex(3).upper()
+    conn.execute(
+        """INSERT INTO students
+           (student_id, name, college, degree, year, cgpa, skills, interest_domain,
+            preferred_location, preferred_stipend_min, past_experience_months)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
+        (
+            student_id, data["name"], data.get("college", ""), data.get("degree", ""),
+            data.get("year", 1), data.get("cgpa", 0.0),
+            ";".join(data["skills"]) if isinstance(data["skills"], list) else data["skills"],
+            data["interest_domain"], data.get("preferred_location", "Remote"),
+            data.get("preferred_stipend_min", 0), data.get("past_experience_months", 0),
+        ),
+    )
+    password_hash = generate_password_hash(data["password"])
+    cur = conn.execute(
+        "INSERT INTO accounts (email, password_hash, role, student_id) VALUES (?,?,?,?)",
+        (data["email"], password_hash, "student", student_id),
+    )
+    account_id = cur.lastrowid
+    conn.commit()
+    conn.close()
+
+    _recommender_cache["instance"] = None
+    token = create_session(account_id)
+    return jsonify({"token": token, "role": "student", "student_id": student_id}), 201
+
+
+@app.post("/api/auth/signup/company")
+def signup_company():
+    data = request.get_json()
+    required = ["email", "password", "company_name"]
+    missing = [f for f in required if f not in data or not data[f]]
+    if missing:
+        return jsonify({"error": f"missing fields: {missing}"}), 400
+
+    conn = db.get_connection()
+    existing = conn.execute("SELECT 1 FROM accounts WHERE email = ?", (data["email"],)).fetchone()
+    if existing:
+        conn.close()
+        return jsonify({"error": "an account with this email already exists"}), 409
+
+    password_hash = generate_password_hash(data["password"])
+    cur = conn.execute(
+        "INSERT INTO accounts (email, password_hash, role, company_name) VALUES (?,?,?,?)",
+        (data["email"], password_hash, "company", data["company_name"]),
+    )
+    account_id = cur.lastrowid
+    conn.commit()
+    conn.close()
+
+    token = create_session(account_id)
+    return jsonify({"token": token, "role": "company", "company_name": data["company_name"]}), 201
+
+
+@app.post("/api/auth/login")
+def login():
+    data = request.get_json()
+    email, password = data.get("email"), data.get("password")
+    if not email or not password:
+        return jsonify({"error": "email and password are required"}), 400
+
+    conn = db.get_connection()
+    account = conn.execute("SELECT * FROM accounts WHERE email = ?", (email,)).fetchone()
+    conn.close()
+
+    if not account or not check_password_hash(account["password_hash"], password):
+        return jsonify({"error": "invalid email or password"}), 401
+
+    token = create_session(account["account_id"])
+    if account["role"] == "student":
+        return jsonify({"token": token, "role": "student", "student_id": account["student_id"]})
+    else:
+        return jsonify({"token": token, "role": "company", "company_name": account["company_name"]})
+
+
+@app.post("/api/auth/logout")
+def logout():
+    data = request.get_json() or {}
+    token = data.get("token")
+    if token:
+        conn = db.get_connection()
+        conn.execute("DELETE FROM sessions WHERE token = ?", (token,))
+        conn.commit()
+        conn.close()
+    return jsonify({"status": "logged out"})
 
 
 # ---------------- Students ----------------
@@ -163,6 +292,11 @@ def get_internship(internship_id):
 @app.post("/api/internships")
 def create_internship():
     data = request.get_json()
+
+    account = get_account_from_token(data.get("token"))
+    if not account or account["role"] != "company":
+        return jsonify({"error": "you must be logged in as a company to post an internship"}), 401
+
     required = ["internship_id", "company", "title", "domain", "required_skills"]
     missing = [f for f in required if f not in data]
     if missing:
