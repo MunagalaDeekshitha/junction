@@ -291,30 +291,149 @@ function AuthScreen({ onAuthenticated }) {
   );
 }
 
+// ---------------- Edit profile form (student) ----------------
+function EditProfileForm({ auth, profile, onSaved, onCancel }) {
+  const [form, setForm] = useState({
+    name: profile.name, college: profile.college || "", degree: profile.degree || "",
+    year: profile.year, cgpa: profile.cgpa,
+    skills: profile.skills.split(";").join(", "),
+    interest_domain: profile.interest_domain, preferred_location: profile.preferred_location,
+    preferred_stipend_min: profile.preferred_stipend_min,
+  });
+  const [saving, setSaving] = useState(false);
+  const set = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+
+  const submit = async () => {
+    if (!form.name || !form.skills) { alert("Name and skills are required."); return; }
+    setSaving(true);
+    try {
+      const res = await fetch(`${API_BASE}/students`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          student_id: auth.student_id, name: form.name, college: form.college, degree: form.degree,
+          year: Number(form.year), cgpa: Number(form.cgpa),
+          skills: form.skills.split(",").map((s) => s.trim()).filter(Boolean),
+          interest_domain: form.interest_domain, preferred_location: form.preferred_location,
+          preferred_stipend_min: Number(form.preferred_stipend_min),
+        }),
+      });
+      if (!res.ok) throw new Error();
+      onSaved();
+    } catch { alert("Could not save changes. Is the backend running?"); }
+    finally { setSaving(false); }
+  };
+
+  return (
+    <div style={{ background: "#fff", border: "1px solid #D8DED6", borderRadius: 14,
+      padding: 18, marginBottom: 20, display: "flex", flexDirection: "column", gap: 12 }}>
+      <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 16 }}>Edit your profile</span>
+      <TextInput label="Full name" value={form.name} onChange={set("name")} />
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <TextInput label="College" value={form.college} onChange={set("college")} />
+        <TextInput label="Degree" value={form.degree} onChange={set("degree")} />
+      </div>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <TextInput label="Year (1-4)" type="number" min="1" max="4" value={form.year} onChange={set("year")} />
+        <TextInput label="CGPA" type="number" step="0.01" min="0" max="10" value={form.cgpa} onChange={set("cgpa")} />
+        <TextInput label="Min. stipend (₹/mo)" type="number" value={form.preferred_stipend_min} onChange={set("preferred_stipend_min")} />
+      </div>
+      <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <SelectInput label="Interest domain" options={DOMAINS} value={form.interest_domain} onChange={set("interest_domain")} />
+        <SelectInput label="Preferred location" options={LOCATIONS} value={form.preferred_location} onChange={set("preferred_location")} />
+      </div>
+      <TextInput label="Skills (comma separated)" value={form.skills} onChange={set("skills")} />
+      <div style={{ display: "flex", gap: 10 }}>
+        <PrimaryButton onClick={submit} disabled={saving}>{saving ? "Saving…" : "Save changes"}</PrimaryButton>
+        <GhostButton onClick={onCancel}>Cancel</GhostButton>
+      </div>
+    </div>
+  );
+}
+
+// ---------------- My applications (student) ----------------
+function statusTone(status) {
+  if (status === "hired" || status === "shortlisted") return "match";
+  return "neutral";
+}
+
+function MyApplications({ auth, refreshTrigger }) {
+  const [applications, setApplications] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function load() {
+      setLoading(true);
+      try {
+        const res = await fetch(`${API_BASE}/applications/student/${auth.student_id}`);
+        setApplications(await res.json());
+      } catch { /* silent — not critical */ }
+      finally { setLoading(false); }
+    }
+    load();
+  }, [auth.student_id, refreshTrigger]);
+
+  if (loading) return null;
+  if (applications.length === 0) {
+    return <p style={{ color: "#5B6660", fontSize: 13, marginBottom: 20 }}>
+      You haven't applied to anything yet — apply from your matches below.
+    </p>;
+  }
+
+  return (
+    <div style={{ background: "#fff", border: "1px solid #D8DED6", borderRadius: 14,
+      padding: "16px 20px", marginBottom: 20 }}>
+      <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15,
+        display: "block", marginBottom: 10 }}>Your applications</span>
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {applications.map((a) => (
+          <div key={a.application_id} style={{ display: "flex", justifyContent: "space-between",
+            alignItems: "center", fontSize: 13, padding: "6px 0", borderBottom: "1px solid #ECEFEA" }}>
+            <span>{a.title} <span style={{ color: "#8A938C" }}>@ {a.company}</span></span>
+            <Pill tone={statusTone(a.status)}>{a.status}</Pill>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ---------------- Student dashboard ----------------
 function StudentDashboard({ auth, onLogout }) {
   const [profile, setProfile] = useState(null);
   const [results, setResults] = useState([]);
+  const [applications, setApplications] = useState([]);
+  const [applicationsLoaded, setApplicationsLoaded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [appliedIds, setAppliedIds] = useState(new Set());
+  const [editing, setEditing] = useState(false);
 
-  useEffect(() => {
-    async function load() {
-      setLoading(true); setError(null);
-      try {
-        const [pRes, rRes] = await Promise.all([
-          fetch(`${API_BASE}/students/${auth.student_id}`),
-          fetch(`${API_BASE}/recommendations/student/${auth.student_id}?top_n=6`),
-        ]);
-        setProfile(await pRes.json());
-        setResults(await rRes.json());
-      } catch (e) {
-        setError("Could not reach the backend. Is it running?");
-      } finally { setLoading(false); }
-    }
-    load();
+  const loadApplications = useCallback(async () => {
+    try {
+      const res = await fetch(`${API_BASE}/applications/student/${auth.student_id}`);
+      setApplications(await res.json());
+    } catch { /* non-fatal — applications list just won't update */ }
+    finally { setApplicationsLoaded(true); }
   }, [auth.student_id]);
+
+  const loadProfileAndRecs = useCallback(async () => {
+    setLoading(true); setError(null);
+    try {
+      const [pRes, rRes] = await Promise.all([
+        fetch(`${API_BASE}/students/${auth.student_id}`),
+        fetch(`${API_BASE}/recommendations/student/${auth.student_id}?top_n=6`),
+      ]);
+      setProfile(await pRes.json());
+      setResults(await rRes.json());
+    } catch (e) {
+      setError("Could not reach the backend. Is it running?");
+    } finally { setLoading(false); }
+  }, [auth.student_id]);
+
+  useEffect(() => { loadProfileAndRecs(); loadApplications(); }, [loadProfileAndRecs, loadApplications]);
+
+  // Derived from the same `applications` state that "My applications" displays,
+  // so the Apply button and the applications list can never disagree with each other.
+  const appliedIds = new Set(applications.map((a) => a.internship_id));
 
   const apply = async (internshipId) => {
     try {
@@ -323,14 +442,25 @@ function StudentDashboard({ auth, onLogout }) {
         body: JSON.stringify({ student_id: auth.student_id, internship_id: internshipId }),
       });
       if (!res.ok) throw new Error();
-      setAppliedIds((prev) => new Set(prev).add(internshipId));
+      await loadApplications(); // refresh immediately so both views update together
     } catch { alert("Could not submit application."); }
   };
 
   return (
     <div style={{ maxWidth: 880, margin: "0 auto" }}>
       <ErrorBanner message={error} />
-      <ProfileCard kind="student" data={profile} />
+      {applicationsLoaded && <MyApplications applications={applications} />}
+      {editing ? (
+        profile && <EditProfileForm auth={auth} profile={profile} onCancel={() => setEditing(false)}
+          onSaved={async () => { await loadProfileAndRecs(); setEditing(false); }} />
+      ) : (
+        <>
+          <ProfileCard kind="student" data={profile} />
+          <div style={{ marginTop: -12, marginBottom: 20 }}>
+            <GhostButton onClick={() => setEditing(true)}>Edit profile</GhostButton>
+          </div>
+        </>
+      )}
       {loading && <p style={{ color: "#5B6660", fontSize: 14 }}>Loading recommendations…</p>}
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {results.map((r) => {
@@ -422,6 +552,82 @@ function NewInternshipForm({ auth, onCreated }) {
   );
 }
 
+function ApplicantsPanel({ internshipId }) {
+  const [applicants, setApplicants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(null);
+
+  const load = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/applications/internship/${internshipId}`);
+      setApplicants(await res.json());
+    } catch { /* silent */ }
+    finally { setLoading(false); }
+  }, [internshipId]);
+
+  useEffect(() => { load(); }, [load]);
+
+  const setStatus = async (applicationId, status) => {
+    setUpdating(applicationId);
+    try {
+      const res = await fetch(`${API_BASE}/applications/${applicationId}`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status }),
+      });
+      if (!res.ok) throw new Error();
+      await load();
+    } catch { alert("Could not update status."); }
+    finally { setUpdating(null); }
+  };
+
+  if (loading) return null;
+
+  return (
+    <div style={{ background: "#fff", border: "1px solid #D8DED6", borderRadius: 14,
+      padding: "16px 20px", marginBottom: 20 }}>
+      <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15,
+        display: "block", marginBottom: 10 }}>
+        Applicants {applicants.length > 0 && `(${applicants.length})`}
+      </span>
+      {applicants.length === 0 ? (
+        <p style={{ color: "#5B6660", fontSize: 13 }}>No one has applied to this posting yet.</p>
+      ) : (
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {applicants.map((a) => (
+            <div key={a.application_id} style={{ display: "flex", justifyContent: "space-between",
+              alignItems: "center", flexWrap: "wrap", gap: 8, padding: "8px 0",
+              borderBottom: "1px solid #ECEFEA", fontSize: 13 }}>
+              <div>
+                <span style={{ fontWeight: 600 }}>{a.name}</span>{" "}
+                <span style={{ color: "#8A938C" }}>{a.college} · CGPA {a.cgpa}</span>
+              </div>
+              <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                <Pill tone={statusTone(a.status)}>{a.status}</Pill>
+                {a.status === "applied" && (
+                  <>
+                    <GhostButton onClick={() => setStatus(a.application_id, "shortlisted")} disabled={updating === a.application_id}>
+                      Shortlist
+                    </GhostButton>
+                    <GhostButton onClick={() => setStatus(a.application_id, "rejected")} disabled={updating === a.application_id}>
+                      Reject
+                    </GhostButton>
+                  </>
+                )}
+                {a.status === "shortlisted" && (
+                  <GhostButton onClick={() => setStatus(a.application_id, "hired")} disabled={updating === a.application_id}>
+                    Mark hired
+                  </GhostButton>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function CompanyDashboard({ auth, onLogout }) {
   const [myPostings, setMyPostings] = useState([]);
   const [selectedId, setSelectedId] = useState("");
@@ -500,7 +706,14 @@ function CompanyDashboard({ auth, onLogout }) {
 
           <ProfileCard kind="internship" data={currentPosting} />
 
+          <ApplicantsPanel internshipId={selectedId} />
+
           {loading && <p style={{ color: "#5B6660", fontSize: 14 }}>Loading candidates…</p>}
+
+          {!loading && results.length > 0 && (
+            <span style={{ fontFamily: "'Fraunces', serif", fontWeight: 600, fontSize: 15,
+              display: "block", marginBottom: 10 }}>AI-matched candidates</span>
+          )}
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {results.map((r) => (
@@ -589,4 +802,3 @@ export default function JunctionApp() {
     </div>
   );
 }
-
